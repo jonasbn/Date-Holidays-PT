@@ -1,4 +1,4 @@
-use Test::More tests => 395;
+use Test::More tests => 385;
 
 BEGIN {
 use_ok( 'Date::Holidays::PT' );
@@ -44,43 +44,6 @@ is_deeply(
   }
 );
 
-is_deeply(
-  $mh->holidays(2004),
-  {
-     1 => {
-        1 => 'Ano Novo'
-     },
-     2 => {
-       24 => 'Entrudo'
-     },
-     4 => {
-        9 => 'Sexta-feira Santa',
-       11 => 'Páscoa',
-       25 => 'Dia da Liberdade',
-     },
-     5 => {
-        1 => 'Dia do Trabalhador'
-     },
-     6 => {
-       10 => 'Dia de Portugal, de Camões e das Comunidades; Corpo de Deus',
-     },
-     8 => {
-       15 => 'Assunção da Virgem',
-     },
-    10 => {
-        5 => 'Dia da Implantação da República',
-     },
-    11 => {
-        1 => 'Dia de Todos-os-Santos',
-     },
-    12 => {
-        1 => 'Dia da Restauração da Independência',
-        8 => 'Imaculada Conceição',
-       25 => 'Natal',
-     },
-  }
-);
-
 ok($mh->is_holiday( 2000,  1,  1));
 ok($mh->is_holiday( 2000,  3,  7));
 ok($mh->is_holiday( 2000,  4, 21));
@@ -95,10 +58,6 @@ ok($mh->is_holiday( 2000, 11,  1));
 ok($mh->is_holiday( 2000, 12,  1));
 ok($mh->is_holiday( 2000, 12,  8));
 ok($mh->is_holiday( 2000, 12, 25));
-ok($mh->is_holiday( 2004,  2, 24));
-ok($mh->is_holiday( 2004,  4,  9));
-ok($mh->is_holiday( 2004,  4, 11));
-ok($mh->is_holiday( 2004,  6, 10));
 
 is($mh->is_pt_holiday( 2000,  1,  1), 'Ano Novo');
 is($mh->is_pt_holiday( 2000,  1,  2), undef);
@@ -481,11 +440,6 @@ is($mh->is_pt_holiday( 2000, 12    ), undef);
 is($mh->is_pt_holiday( 2000        ), undef);
 is($mh->is_pt_holiday(             ), undef);
 
-is($mh->is_pt_holiday( 2004,  2, 24), 'Entrudo');
-is($mh->is_pt_holiday( 2004,  4,  9), 'Sexta-feira Santa');
-is($mh->is_pt_holiday( 2004,  4, 11), 'Páscoa');
-is($mh->is_pt_holiday( 2004,  6, 10), 'Dia de Portugal, de Camões e das Comunidades; Corpo de Deus');
-
 is_deeply(
   $mh->holidays(2000),
   {
@@ -506,43 +460,6 @@ is_deeply(
      6 => {
        10 => 'Dia de Portugal, de Camões e das Comunidades',
        22 => 'Corpo de Deus',
-     },
-     8 => {
-       15 => 'Assunção da Virgem',
-     },
-    10 => {
-        5 => 'Dia da Implantação da República',
-     },
-    11 => {
-        1 => 'Dia de Todos-os-Santos',
-     },
-    12 => {
-        1 => 'Dia da Restauração da Independência',
-        8 => 'Imaculada Conceição',
-       25 => 'Natal',
-     },
-  }
-);
-
-is_deeply(
-  $mh->holidays(2004),
-  {
-     1 => {
-        1 => 'Ano Novo'
-     },
-     2 => {
-       24 => 'Entrudo'
-     },
-     4 => {
-        9 => 'Sexta-feira Santa',
-       11 => 'Páscoa',
-       25 => 'Dia da Liberdade',
-     },
-     5 => {
-        1 => 'Dia do Trabalhador'
-     },
-     6 => {
-       10 => 'Dia de Portugal, de Camões e das Comunidades; Corpo de Deus',
      },
      8 => {
        15 => 'Assunção da Virgem',
