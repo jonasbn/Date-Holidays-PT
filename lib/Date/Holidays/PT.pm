@@ -6,6 +6,7 @@ use strict;
 use Date::Holidays::Super;
 use Date::Easter;
 use Time::JulianDay;
+use utf8;
 
 my @ISA = qw(Date::Holidays::Super);
 
