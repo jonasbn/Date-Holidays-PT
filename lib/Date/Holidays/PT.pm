@@ -6,7 +6,6 @@ use strict;
 use Date::Holidays::Super;
 use Date::Easter;
 use Time::JulianDay;
-use utf8;
 
 my @ISA = qw(Date::Holidays::Super);
 
@@ -175,7 +174,7 @@ sub holidays {
   return \%holidays;
 }
 
-=encoding utf8
+=encoding iso8859-1
 
 =head1 NATIONAL HOLIDAYS
 
