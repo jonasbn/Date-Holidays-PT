@@ -174,6 +174,8 @@ sub holidays {
   return \%holidays;
 }
 
+=encoding utf8
+
 =head1 NATIONAL HOLIDAYS
 
 The following Portuguese holidays have fixed dates:
